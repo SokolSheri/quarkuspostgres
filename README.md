@@ -74,3 +74,6 @@ Easily start your RESTful Web Services
 Monitor your application's health using SmallRye Health
 
 [Related guide section...](https://quarkus.io/guides/smallrye-health)
+
+### Linting Link
+ https://github.com/nebula-plugins/gradle-lint-plugin/wiki
