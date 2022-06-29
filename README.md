@@ -40,7 +40,7 @@ You can create a native executable using:
 
 Or, if you don't have GraalVM installed, you can run the native executable build in a container using: 
 ```shell script
-./gradlew build -Dquarkus.package.type=native -Dquarkus.native.container-build=true
+./gradlew build -D quarkus.package.type=native -D quarkus.native.container-build=true -D quarkus.native.builder-image=quay.io/quarkus/ubi-quarkus-native-image:21.3-java17
 ```
 
 You can then execute your native executable with: `./build/quarkus-bootstrap-1.0-runner`
