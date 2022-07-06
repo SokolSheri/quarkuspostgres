@@ -2,9 +2,9 @@ plugins {
 
     id 'java'
     id 'io.quarkus'
-   // id 'nebula.lint' version '17.7.0'
+    id 'nebula.lint' version '17.7.0'
     //id "se.solrike.sonarlint" version "1.0.0-beta"
-    id "name.remal.sonarlint" version "1.5.0"
+  // id "name.remal.sonarlint" version "1.5.0"
 }
 
 repositories {
@@ -53,6 +53,6 @@ tasks.register('copyReport', Copy) {
 }
 
 allprojects {
-   // apply plugin: 'nebula.lint'
- //  gradleLint.rules = ['all-dependency'] // add as many rules here as you'd like
+    apply plugin: 'nebula.lint'
+   gradleLint.rules = ['all-dependency'] // add as many rules here as you'd like
 }
