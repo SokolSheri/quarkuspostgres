@@ -45,7 +45,6 @@ dependencies {
 group 'com.brightly'
 version '1.0'
 
-def changeLog = "./src/main/resources/db/changelog/db.changelog-master.yaml"
 ext.liquibaseProps = new Properties()
 InputStream is = new FileInputStream("src/main/resources/liquibase.properties")
 liquibaseProps.load(is)
@@ -53,7 +52,7 @@ liquibaseProps.load(is)
 liquibase {
     activities {
         main {
-            changeLogFile changeLog
+            changeLogFile liquibaseProps['changeLogFile']
             url liquibaseProps['url']
             username liquibaseProps['username']
             password liquibaseProps['password']
