@@ -136,6 +136,34 @@ podman run --name postgresql -e POSTGRES_USER=admin -e POSTGRES_PASSWORD=Passwor
 ```
 Where the postgresql folder was created in **C:\data (/mnt/c/data)**.
 
+
+#### PostgreSql **Database Configuration**
+For local environment set-up, check application.properties file.
+
+#### Liquibase Configuration
+Basic liquibase commands are:
+
+1. For deploying the changelog file to the configured database
+```
+./gradlew update
+```
+2. For Rollback the database state to database version 1.0.0. (here, liquibaseCommandValue will define the database tag value).
+```
+./gradlew rollback -PliquibaseCommandValue="1.0.0"  
+```
+3. After deploying the changes, add a new database version with tag. (here, liquibaseCommandValue will define the database tag value).
+```
+./gradlew tag -PliquibaseCommandValue="v_2.0" -
+```
+4. Generate the Changelog from the configured database.
+```
+./gradlew generateChangeLog
+```
+For More tasks related to liquibase, run command:
+```
+./gradlew tasks
+```
+
 ## Related Guides
 
 - OpenShift ([guide](https://quarkus.io/guides/deploying-to-openshift)): Generate OpenShift resources from annotations
@@ -166,3 +194,5 @@ Monitor your application's health using SmallRye Health
 
 ### Linting Link
  https://github.com/nebula-plugins/gradle-lint-plugin/wiki
+
+
