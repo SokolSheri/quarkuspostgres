@@ -4,7 +4,7 @@ plugins {
     id 'io.quarkus'
     //id 'nebula.lint' version '17.7.0'
    // id "se.solrike.sonarlint" version "1.0.0-beta"
-   id "name.remal.sonarlint" version "1.5.0"
+    id "name.remal.sonarlint" version "1.5.0"
     id 'org.liquibase.gradle' version '2.1.0'
 }
 
@@ -46,7 +46,7 @@ group 'com.brightly'
 version '1.0'
 
 ext.liquibaseProps = new Properties()
-InputStream is = new FileInputStream("src/main/resources/liquibase.properties")
+InputStream is = new FileInputStream("${quarkusLiquibasePropertisFile}")
 liquibaseProps.load(is)
 
 liquibase {
